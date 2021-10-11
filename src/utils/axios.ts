@@ -1,11 +1,15 @@
 // http://www.axios-js.com/docs/#axios-create-config
-import axios from 'axios'
 import { notification } from 'antd'
+import axios from 'axios'
+
+import config from '../../config'
 import { loginURL } from '../constants'
+
+const env = process.argv[process.argv.length - 1]
 
 export const axiosInstance = axios.create({
   timeout: 20 * 1000, // 20s
-  baseURL: `${__HOST}`,
+  baseURL: `${config[env].url}`,
   headers: { 'X-Requested-With': 'XMLHttpRequest' },
 })
 // http request 拦截器

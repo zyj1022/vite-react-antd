@@ -1,9 +1,9 @@
+import { ConfigProvider } from 'antd'
+import zhCN from 'antd/es/locale/zh_CN'
 import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
 
-import zhCN from 'antd/es/locale/zh_CN'
-import { ConfigProvider } from 'antd'
+import App from './App'
 
 const Root: FC = () => {
   return (

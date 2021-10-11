@@ -1,6 +1,5 @@
-
-import { Spin } from 'antd';
-import styled from 'styled-components';
+import { Spin } from 'antd'
+import styled from 'styled-components'
 
 const Loading = styled(Spin)`
   position: fixed;
@@ -11,6 +10,6 @@ const Loading = styled(Spin)`
   .ant-spin-dot {
     margin: auto;
   }
-`;
+`
 
-export default Loading;
+export default Loading

@@ -1,7 +1,8 @@
-import React from 'react'
 import { Button } from 'antd'
-import { observer, Observer } from 'mobx-react-lite'
-import { useStore } from '../../stores'
+import { Observer } from 'mobx-react-lite'
+import React from 'react'
+
+import { useStore } from '@/stores'
 
 const Home: React.FC = () => {
   const { common } = useStore()
@@ -21,7 +22,7 @@ const Home: React.FC = () => {
             </Button>
           </p>
           <p>
-            <img src="/images/logo.svg" />
+            <img src="/images/ye.png" alt="" />
           </p>
         </div>
       )}

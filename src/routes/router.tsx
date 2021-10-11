@@ -1,12 +1,12 @@
-import React, { Suspense } from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
-import { Redirect } from 'react-router';
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory } from 'history'
+import React, { Suspense } from 'react'
+import { Redirect } from 'react-router'
+import { Route, Router, Switch } from 'react-router-dom'
 
-import Loading from '../components/loading';
-import { RouterWrap, Routers } from './routes';
+import Loading from '../components/loading'
+import { Routers, RouterWrap } from './routes'
 
-const history = createBrowserHistory();
+const history = createBrowserHistory()
 
 const router = () => (
   <Suspense fallback={<Loading />}>
@@ -28,9 +28,9 @@ const router = () => (
       </Switch>
     </Router>
   </Suspense>
-);
+)
 
-export default router;
+export default router
 
 // import React, { Suspense } from 'react';
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -50,5 +50,3 @@ export default router;
 //     </Suspense>
 //   );
 // };
-
-

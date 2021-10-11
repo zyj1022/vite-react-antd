@@ -1,6 +1,6 @@
-import URL from 'url'
 import { createBrowserHistory } from 'history'
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router'
+import URL from 'url'
 
 // 单例模式，全局唯一
 let instance: Router | null = null

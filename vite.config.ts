@@ -1,16 +1,21 @@
-import { defineConfig } from 'vite'
-import type { Plugin } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
+import type { Plugin, ConfigEnv, UserConfig } from 'vite'
 import path from 'path'
 
 import reactRefresh from '@vitejs/plugin-react-refresh'
-import legacy from '@vitejs/plugin-legacy'
+import legacy from '@vitejs/plugin-legacy' // 兼容传统浏览器
 import styleImport from 'vite-plugin-style-import'
 import visualizer from 'rollup-plugin-visualizer'
 
 import { antdThemeVariables } from './config/antd-theme'
 import config from './config'
 
-const env = process.argv[process.argv.length - 1]
+const env = process.argv[process.argv.length - 1] // 获取环境变量
+
+
+const root = process.cwd()
+// const env = loadEnv(ConfigEnv.mode, root)
+console.log('loadEnv', root, env)
 
 // https://vitejs.dev/config/
 export default defineConfig({

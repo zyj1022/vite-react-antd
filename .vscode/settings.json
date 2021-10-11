@@ -1,0 +1,36 @@
+{
+  "editor.tabSize": 2,
+  "javascript.suggest.autoImports": false,
+  "typescript.suggest.autoImports": false,
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "remimarsal.prettier-now"
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "window.zoomLevel": 1,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "editor.detectIndentation": false,
+  "prettier.configPath": ".prettierrc.js",
+  "eslint.options": {
+    "extensions": [".js", ".ts", ".tsx", "jsx", "html"]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

@@ -75,63 +75,70 @@ export function generateList(data, flat) {
  */
 export function streamParams(params: any) {
   if (!params.appId) {
-    params.appId = 'jc2m_select_1630983922886'; // 埋点ID
+    params.appId = 'jc2m_select_1630983922886' // 埋点ID
   }
 
   const sortedParams = {
     appId: params.appId,
     funcPath: params.funcPath,
     selectedItem: params.selectedItem,
-  };
+  }
 
-  const obj = sortedParams;
+  const obj = sortedParams
 
   for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(params, key) && params[key] && params[key] != '-') {
-      obj[key] = params[key];
+    if (
+      Object.prototype.hasOwnProperty.call(params, key) &&
+      params[key] &&
+      params[key] != '-'
+    ) {
+      obj[key] = params[key]
     } else {
-      obj[key] = '-';
+      obj[key] = '-'
     }
   }
 
-  return Object.values(obj);
+  return Object.values(obj)
 }
 
 // 埋点
-export const onEventTrack = (funcPath: any, selectedItem='') => {
+export const onEventTrack = (funcPath: any, selectedItem = '') => {
   const params = streamParams({
     funcPath,
     selectedItem,
-  });
-  log(...params);
-};
+  })
+  log(...params)
+}
 
-export function trace(targetName, param, logName = 'log') {
+export function trace(targetName: any, param: any) {
   // 开发环境调试传入值
-  if (window.location.search.indexOf(`${log}`) > -1 || window.location.hash.indexOf(`${log}`) > -1) {
-    console.log(`${targetName}`, param);
+  if (
+    window.location.search.indexOf(`${log}`) > -1 ||
+    window.location.hash.indexOf(`${log}`) > -1
+  ) {
+    console.log(`${targetName}`, param)
   }
 }
 
 // 判断是否全部为空格
 export function isAllSpace(str: string) {
-  if (str == '') return true;
-  let reg = '^[ ]+$';
-  return new RegExp(reg).test(str);
+  if (str == '') return true
+  let reg = '^[ ]+$'
+  return new RegExp(reg).test(str)
 }
 
 // 去除字符串中首尾的空格
 export function trimStrSpace(str: string) {
   if (str) {
-    str = str.replace(/^\s+/, '');
+    str = str.replace(/^\s+/, '')
     for (let i = str.length - 1; i >= 0; i--) {
       if (/\S/.test(str.charAt(i))) {
-        str = str.substring(0, i + 1);
-        break;
+        str = str.substring(0, i + 1)
+        break
       }
     }
   }
-  return str;
+  return str
 }
 
 /**
@@ -140,11 +147,11 @@ export function trimStrSpace(str: string) {
 @ str:待检测字符串
 */
 export function isHasSpecialStr(str: string) {
-  var myReg = /[~!@#$%^&*()/\|,.<>?"'();:_+-=\[\]{}]/;
+  var myReg = /[~!@#$%^&*()/\|,.<>?"'();:_+-=\[\]{}]/
   if (myReg.test(str)) {
-    return true;
+    return true
   }
-  return false;
+  return false
 }
 
 /**
@@ -155,47 +162,27 @@ export function isHasSpecialStr(str: string) {
  */
 export function compare(key: string, desc = true) {
   return function (a: any, b: any) {
-    let value1 = a[key];
-    let value2 = b[key];
+    let value1 = a[key]
+    let value2 = b[key]
     if (desc == true) {
-      return value1 - value2; // 升序排列
+      return value1 - value2 // 升序排列
     } else {
-      return value2 - value1; // 降序排列
+      return value2 - value1 // 降序排列
     }
-  };
+  }
 }
 
 // object 排序
 export function objCompare(key: string) {
   return (obj1, obj2) => {
-    let value1 = parseFloat(obj1[key]);
-    let value2 = parseFloat(obj2[key]);
+    let value1 = parseFloat(obj1[key])
+    let value2 = parseFloat(obj2[key])
     if (value2 > value1) {
-      return 1;
+      return 1
     } else if (value2 < value1) {
-      return -1;
+      return -1
     } else {
-      return 0;
-    }
-  };
-}
-
-/**
- *
- * @param {string} str
- */
-export function UrlSearch(str: string) {
-  var name, value;
-  var str = location.href; //取得整个地址栏
-  var num = str.indexOf('?');
-  str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
-  var arr = str.split('&'); //各个参数放到数组里
-  for (var i = 0; i < arr.length; i++) {
-    num = arr[i].indexOf('=');
-    if (num > 0) {
-      name = arr[i].substring(0, num);
-      value = arr[i].substr(num + 1);
-      this[name] = value;
+      return 0
     }
   }
 }

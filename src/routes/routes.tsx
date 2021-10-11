@@ -1,8 +1,8 @@
-import React, { lazy, Fragment } from 'react';
-import { withRouter } from 'react-router';
+import React, { Fragment, lazy } from 'react'
+import { withRouter } from 'react-router'
 
-const Home = withRouter(lazy(() => import('../pages/home')));
-const About = withRouter(lazy(() => import('../pages/about')));
+const Home = withRouter(lazy(() => import('../pages/home')))
+const About = withRouter(lazy(() => import('../pages/about')))
 
 export const Routers = [
   {
@@ -16,7 +16,7 @@ export const Routers = [
   {
     path: 'About',
     component: About,
-  }
-];
+  },
+]
 
-export const RouterWrap = ({ children }) => <Fragment>{children}</Fragment>;
+export const RouterWrap = ({ children }) => <Fragment>{children}</Fragment>

@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx'
+
 import CommonStore from './common.store'
-import RouterStoreInstance from './router.store';
+import RouterStoreInstance from './router.store'
 
 class RootStore {
   router = RouterStoreInstance

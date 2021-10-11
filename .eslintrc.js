@@ -24,10 +24,22 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended', // Make sure this is always the last element in the array.
   ],
-  plugins: ['simple-import-sort', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'react-hooks',
+    'eslint-plugin-react',
+    'simple-import-sort',
+    'prettier',
+  ],
   rules: {
+    'no-useless-escape': 0,
+    'no-undef': 0,
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'react/react-in-jsx-scope': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
     'jsx-a11y/accessible-emoji': 'off',
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -42,4 +54,4 @@ module.exports = {
       },
     ],
   },
-};
+}

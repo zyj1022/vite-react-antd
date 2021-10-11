@@ -1,14 +1,16 @@
-# Vite + React + Antd + Typescript
+# [Vite](https://cn.vitejs.dev/) + React + Antd + Typescript
 
 用`vite2.x`搭建的`react17.x`项目，支持`TypeScript4.x`、`Antd4.x`，`mobx`等。
 ## 开发
+
+可以用 [pnpm](https://pnpm.io/zh/motivation) 来创建非扁平化的 node_modules 文件夹。**[安装pnpm方法](https://pnpm.io/zh/installation)**
 
 ```sh
 # clone
 git clone https://github.com/zyj1022/vite-react-antd.git
 
 # install
-yarn install
+yarn install  # pnpm install
 
 # start
 yarn start
@@ -20,8 +22,7 @@ yarn start
 - 用 `Mobx` 管理 `store`
 - 支持`Proxy`代理、`alias`别名
 - 支持`HMR`快速热更新
-- 开发启动速度快，以秒计算
-- 支持懒加载和`chunk`分割
+- 支持规范Git提交
 
 ## 目录结构
 
