@@ -13,7 +13,7 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "start": "npm run dev",
+    "start": "npm run mock | npm run dev",
     "dev": "vite --mode development",
     "build": "vite build --mode release",
     "build:beta": "vite build --mode beta",
@@ -22,7 +22,8 @@
     "prebuild": "rimraf dist",
     "serve": "vite preview",
     "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx --no-error-on-unmatched-pattern --quiet --fix ./src",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "mock": "nodemon ./mock/app.js"
   },
   "keywords": [
     "vite",
@@ -53,6 +54,7 @@
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-angular": "^13.2.0",
     "@commitlint/config-conventional": "^13.2.0",
+    "@types/pino": "^6.3.11",
     "@types/node": "^16.10.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
@@ -68,6 +70,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "fastify": "^3.22.0",
     "fs": "^0.0.1-security",
     "history": "^5.0.1",
     "husky": "^7.0.2",
@@ -78,6 +81,7 @@
     "mobx-react": "^7.2.0",
     "mobx-react-lite": "^3.2.1",
     "mobx-react-router": "^4.1.0",
+    "nodemon": "^2.0.13",
     "omit.js": "^2.0.2",
     "path": "^0.12.7",
     "postcss": "^8.3.9",

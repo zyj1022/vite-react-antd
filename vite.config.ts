@@ -8,7 +8,7 @@ import styleImport from 'vite-plugin-style-import'
 import visualizer from 'rollup-plugin-visualizer'
 
 import { antdThemeVariables } from './config/antd-theme'
-import config from './config'
+import config from './config/index.js'
 
 const env = process.argv[process.argv.length - 1] // 获取环境变量
 
@@ -65,7 +65,7 @@ function setServerProxy() {
       '/api': {
         target: config.proxy.target, // 当遇到 /api 路径时，将其转换成 target 的值
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        // rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   }

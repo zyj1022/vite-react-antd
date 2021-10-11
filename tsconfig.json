@@ -36,7 +36,12 @@
       "@typings/*": ["typings/*"]
     },
   },
-  "include": ["./src", "src/**/*"],
+  "include": [
+    "src/**/*",
+    "typings/**/*",
+    "config/**/*",
+    "vite.config.ts",
+  ],
   "exclude": [
     "node_modules",
     "dist/**",

@@ -1,19 +1,19 @@
 import axios from '../utils/axios'
 
-export async function getUserInfo(params: any) {
+export async function getTest(params: any) {
   return axios({
-    url: '/common/getUserInfo',
-    method: 'get',
-    params,
-    title: '获取用户信息',
+    url: '/api/getTest',
+    method: 'post',
+    data: params,
+    title: '接口测试',
   })
 }
 
-export async function checkVersion(params: any) {
+export async function getUser(params: any = {}) {
   return axios({
-    url: '/api/checkVersion',
+    url: '/api/getUser',
     method: 'get',
     params,
-    title: '获取当前版本',
+    title: '获取用户信息',
   })
 }

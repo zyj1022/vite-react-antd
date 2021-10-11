@@ -31,22 +31,3 @@ const router = () => (
 )
 
 export default router
-
-// import React, { Suspense } from 'react';
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-// const Home = React.lazy(() => import("../pages/home"));
-// const About = React.lazy(() => import("../pages/about"));
-
-// export const Routers = () => {
-//   return (
-//     <Suspense fallback={<span>loading</span>}>
-//       <Router>
-//         <Switch>
-//           <Route key="/home" path="/home" component={Home}></Route>
-//           <Route key="/about" path="/about" component={About}></Route>
-//         </Switch>
-//       </Router>
-//     </Suspense>
-//   );
-// };

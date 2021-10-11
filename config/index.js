@@ -1,4 +1,4 @@
-const config: any = {
+module.exports = {
   development: {
     url: 'http://localhost:8800/',
     apiURL: '/api',
@@ -20,14 +20,11 @@ const config: any = {
     port: 8800,
   },
   mock: {
-    express: {
-      port: 6649,
-    },
+    port: 8899,
   },
   proxy: {
     // 代理目标链接
-    target: 'http://xxx.xxx.local', // 预发
-    targetName: 'xxx.com',
+    target: 'http://127.0.0.1:8899',
   },
   // 配置 ant 主题皮肤
   lessModifyVars: {
@@ -35,5 +32,3 @@ const config: any = {
     'font-size-base': '12px',
   }
 }
-
-export default config

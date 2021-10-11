@@ -1,6 +1,7 @@
-# [Vite](https://cn.vitejs.dev/) + React + Antd + Typescript
+# [Vite](https://cn.vitejs.dev/) + React + Antd + Typescript + [Fastify](https://www.fastify.io/)
 
-用`vite2.x`搭建的`react17.x`项目，支持`TypeScript4.x`、`Antd4.x`，`mobx`等。
+用`vite2.x`搭建的`react17.x`项目，支持`TypeScript4.x`、`Antd4.x`，`mobx`, mock 数据采用 [`fastify`](https://www.fastify.io/) 等。
+
 ## 开发
 
 可以用 [pnpm](https://pnpm.io/zh/motivation) 来创建非扁平化的 node_modules 文件夹。**[安装pnpm方法](https://pnpm.io/zh/installation)**
@@ -29,6 +30,7 @@ yarn start
 ```js
 ├── dist                                // 默认的 build 输出目录
 ├── config                              // 全局配置文件
+├── mock                                // mock 数据自造
 └── src                                 // 源码目录
     ├── assets                          // 公共的文件（如image、font等）
     ├── components                      // 项目组件
