@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx'
+import { runInAction, makeAutoObservable } from 'mobx'
 import * as api from '../requests/requests'
 import { getResultData } from './commonUtil'
 export default class CommonStore {
@@ -22,12 +22,16 @@ export default class CommonStore {
   async getUser(params: any = null) {
     const res = await api.getUser(params)
     const data = getResultData(res)
+    // runInAction(() => {
     this.user = data
+    // })
   }
 
   async getTest(params: any) {
     const res = await api.getTest(params)
     const data = getResultData(res)
+    // runInAction(() => {
     this.test = data
+    // })
   }
 }

@@ -3,15 +3,16 @@ const pino = require('pino')
 const config = require('../config/index');
 
 const server = fastify({
-  logger: pino({ level: 'info' }),
+  logger: pino({
+    level: 'info'
+  }),
 })
-
 
 const resultData = {
   code: '0',
-  success: true,  //是否成功
-  msg: null,  //错误信息
-  data: null      //返回数据，可以是任意结构
+  success: true, //是否成功
+  msg: null, //错误信息
+  data: null //返回数据，可以是任意结构
 };
 
 const headers = {

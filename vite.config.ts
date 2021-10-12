@@ -10,12 +10,9 @@ import visualizer from 'rollup-plugin-visualizer'
 import { antdThemeVariables } from './config/antd-theme'
 import config from './config/index.js'
 
-const env = process.argv[process.argv.length - 1] // 获取环境变量
-
-
-const root = process.cwd()
-// const env = loadEnv(ConfigEnv.mode, root)
-console.log('loadEnv', root, env)
+// const env = process.argv[process.argv.length - 1] // 获取环境变量
+// const root = process.cwd()
+// console.log('loadEnv', root, env)
 
 // https://vitejs.dev/config/
 export default defineConfig({
