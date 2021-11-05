@@ -1,6 +1,6 @@
 module.exports = {
   development: {
-    url: 'http://localhost:8800/',
+    url: 'http://localhost:4400/',
     apiURL: '/api',
   },
   beta: {
@@ -13,18 +13,18 @@ module.exports = {
   },
   dev: {
     host: 'localhost',
-    port: 8800,
+    port: 4400,
   },
   dev_remote: {
     host: 'pin.local.com',
-    port: 8800,
+    port: 4400,
   },
   mock: {
-    port: 8899,
+    port: 4499,
   },
   proxy: {
     // 代理目标链接
-    target: 'http://127.0.0.1:8899',
+    target: 'http://127.0.0.1:4499',
   },
   // 配置 ant 主题皮肤
   lessModifyVars: {

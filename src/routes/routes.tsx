@@ -1,22 +1,56 @@
-import React, { Fragment, lazy } from 'react'
-import { withRouter } from 'react-router'
+import React, { Suspense, lazy } from 'react'
+import type { RouteObject } from 'react-router-dom'
+import { Outlet, Link, useRoutes, useParams } from 'react-router-dom'
+import Loading from '../components/loading'
 
-const Home = withRouter(lazy(() => import('../pages/home')))
-const About = withRouter(lazy(() => import('../pages/about')))
+/**
+ * react-router 6 https://reactrouter.com/
+ */
 
-export const Routers = [
+const Home = lazy(() => import('../pages/home'))
+const About = lazy(() => import('../pages/about'))
+
+const Comps = [
   {
-    path: '',
-    component: Home,
+    index: true,
+    element: <Home />
   },
   {
-    path: 'Home',
-    component: Home,
+    path: 'about',
+    element: <About />
   },
   {
-    path: 'About',
-    component: About,
+    path: '*',
+    element: <Home />
   },
 ]
 
-export const RouterWrap = ({ children }) => <Fragment>{children}</Fragment>
+const Element = (props: { children: React.ReactChild }) => {
+  return <Suspense fallback={<Loading />}>{props.children}</Suspense>
+}
+
+const children = () => {
+  return Comps.map((item, i) => {
+    const elm: any = {
+      element: (
+        <Element>
+          <Home />
+        </Element>
+      )
+    }
+    if (item.index) {
+      elm.index = true;
+    } else {
+      elm.path = item.path;
+    }
+    return elm;
+  })
+}
+
+export const routes: RouteObject[] = [
+  {
+    path: '/',
+    element: <Outlet />,
+    children: children(),
+  },
+]

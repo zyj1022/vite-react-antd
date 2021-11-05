@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   return (
     <Observer>
       {() => (
-        <div>
+        <div className="container">
           <h2>Home {common.count}</h2>
           <p>
             <Button type="primary" onClick={() => common.increment()}>

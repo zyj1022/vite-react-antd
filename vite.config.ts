@@ -16,7 +16,12 @@ import config from './config/index.js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh(), legacy(), setStyleImport(), setVisualizer()],
+  plugins: [
+    reactRefresh(),
+    // legacy(),
+    setStyleImport(),
+    setVisualizer()
+  ],
   css: {
     preprocessorOptions: {
       less: {
