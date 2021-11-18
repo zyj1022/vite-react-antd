@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import type { RouteObject } from 'react-router-dom'
-import { Outlet, Link, useRoutes, useParams } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import Loading from '../components/loading'
 
 /**
@@ -10,47 +10,33 @@ import Loading from '../components/loading'
 const Home = lazy(() => import('../pages/home'))
 const About = lazy(() => import('../pages/about'))
 
-const Comps = [
+const Element = (props: { child: React.ReactChild }) => {
+  return <Suspense fallback={<Loading />}>{props.child}</Suspense>
+}
+
+const children = [
   {
     index: true,
-    element: <Home />
+    element: <Element child={<Home />} />,
   },
   {
-    path: 'about',
-    element: <About />
+    path: 'About',
+    element: <Element child={<About />} />,
+  },
+  {
+    path: 'Home',
+    element: <Element child={<Home />} />,
   },
   {
     path: '*',
-    element: <Home />
+    element: <Element child={<Home />} />,
   },
 ]
-
-const Element = (props: { children: React.ReactChild }) => {
-  return <Suspense fallback={<Loading />}>{props.children}</Suspense>
-}
-
-const children = () => {
-  return Comps.map((item, i) => {
-    const elm: any = {
-      element: (
-        <Element>
-          <Home />
-        </Element>
-      )
-    }
-    if (item.index) {
-      elm.index = true;
-    } else {
-      elm.path = item.path;
-    }
-    return elm;
-  })
-}
 
 export const routes: RouteObject[] = [
   {
     path: '/',
     element: <Outlet />,
-    children: children(),
+    children: children,
   },
 ]

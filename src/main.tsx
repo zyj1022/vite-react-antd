@@ -2,6 +2,7 @@ import { ConfigProvider } from 'antd'
 import zhCN from 'antd/es/locale/zh_CN'
 import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
+import 'virtual:windi.css'
 
 import App from './App'
 

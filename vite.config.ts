@@ -6,6 +6,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 import legacy from '@vitejs/plugin-legacy' // 兼容传统浏览器
 import styleImport from 'vite-plugin-style-import'
 import visualizer from 'rollup-plugin-visualizer'
+import WindiCSS from 'vite-plugin-windicss'
 
 import { antdThemeVariables } from './config/antd-theme'
 import config from './config/index.js'
@@ -20,7 +21,8 @@ export default defineConfig({
     reactRefresh(),
     // legacy(),
     setStyleImport(),
-    setVisualizer()
+    setVisualizer(),
+    WindiCSS(),
   ],
   css: {
     preprocessorOptions: {
