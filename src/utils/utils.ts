@@ -64,7 +64,6 @@ export function generateList(data, flat) {
 
 /**
  * 格式化埋点参数
- * http://stream.jd.com/
  * @param {*} params 埋点参数
  * log(
       ...streamParams({
@@ -75,7 +74,7 @@ export function generateList(data, flat) {
  */
 export function streamParams(params: any) {
   if (!params.appId) {
-    params.appId = 'jc2m_select_1630983922886' // 埋点ID
+    params.appId = null // 埋点ID
   }
 
   const sortedParams = {
